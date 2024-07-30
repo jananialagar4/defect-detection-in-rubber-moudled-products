@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+</head>
+<body>
+    <h1>Classification Result</h1>
+    <img src="{{ url_for('static', filename=img_path) }}" alt="Uploaded Image" style="max-width: 500px;">
+    <p>Predicted Label: {{ predicted_label }}</p>
+    <p>Prediction Scores: {{ predictions }}</p>
+    
+    {% if predicted_label == 'notokay' %}
+    <h2>Further Classification</h2>
+    <p>Second Model - Predicted Label: {{ predicted_label2 }}</p>
+    <p>Second Model - Prediction Scores: {{ predictions2 }}</p>
+    {% endif %}
+    
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
